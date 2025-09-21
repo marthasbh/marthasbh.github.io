@@ -1,21 +1,21 @@
 ---
 layout: post
-title: Hello World
-categories: [content, demo]
+title: Truffle Shuffle Update
+categories: [content, project, scripts, macos]
 ---
 
-Hello and welcome. The only purpose of this post is to greet you when your site comes alive for the first time.  
-This post will demonstrate some of the more common content & elements found in posts.  
-Feel free to delete this post when you are ready to publish your first post.  
+While taking a DFIR course on Mac specific forensics recently, I was introduced to the truffle-shuffle script. It's a short script that pulls from MacOS' document recovery databases to reconstruct files that were autosaved by the system. The script was written five years ago and wasn't working. I decided to fork and update it as a fun side project. It's published to my github, but for those unfamiliar with the files and databases that this runs with, I have included an overview of the script, it's functionality, and how to get it working for you.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.
+## Obtaining Necessary Files
 
-## Some great heading (h2)
+This script requires three inputs.
 
-Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu.
-<!--more--
+1. Output Directory
+2. CSChunkFile
+3. CSChunkFileDB
 
-Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.
+The CSChunk files are located in hidden directories and require elevated privileges to access. You can either run the script as sudo or make copies of the CSChunk files and change their permissions before running the script.
+
 
 ## Another great heading (h2)
 
