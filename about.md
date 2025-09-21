@@ -4,6 +4,4 @@ title: About
 permalink: /about
 ---
 
-Hi, Write an awesome description about your blog here.  
-Feel free to make it a bit more interesting by adding a picture or two.  
-Only limit here is your creativity and imagination. Unleash them with full force.  
+Hi, my name is Martha. I'm an unapologetic DFIR geek. This is my space for all the things I can’t stop talking about (even if everyone around me wishes I would).
