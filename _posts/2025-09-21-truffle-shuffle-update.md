@@ -6,8 +6,6 @@ categories: [content, project, scripts, macos]
 
 While taking a DFIR course on Mac specific forensics recently, I was introduced to the truffle-shuffle script. It's a short script that pulls from MacOS' document recovery databases to reconstruct files that were autosaved by the system. The script was written five years ago and wasn't working. I decided to fork and update it as a fun side project. It's published to my github, but for those unfamiliar with the files and databases that this runs with, I have included an overview of the script, its functionality, and how to get it working for you.
 
-## Obtaining Necessary Files
-
 This script requires three inputs.
 
 1. Desired Output Directory  
@@ -18,16 +16,11 @@ The files are located in the `.DocumentRevisions-V100/.cs` directory and require
 
 The script works by reconstructing recovery files stored by MacOS as part of their built in document recovery capabilities. It reads chunk lists from the `CSStorageChunkListTable` in `ChunkStoreDatabase`. It then uses the chunk IDs to look up the offsets and sizes of these chunks in the `CSChunkTable`, then pulls the actual chunk bytes from the binary `ChunkStorage` file. It stitches those chunks together in the correct order to rebuild the original file contents, while also saving each individual raw chunk as its own file for reference.
 
-To determine which application should be used to open the reconstructed file, run:
-
-```bash
-file <reconstructedfilename>
-```
-in your terminal. 
+To determine which application should be used to open the reconstructed file, run ```file <reconstructedfilename>```in your terminal. 
 
 ## TruffleShuffle v2
 
-```bash
+```
 #!/usr/bin/env python3
 
 import os
