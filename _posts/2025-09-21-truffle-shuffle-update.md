@@ -4,25 +4,30 @@ title: Truffle Shuffle Update
 categories: [content, project, scripts, macos]
 ---
 
-While taking a DFIR course on Mac specific forensics recently, I was introduced to the truffle-shuffle script. It's a short script that pulls from MacOS' document recovery databases to reconstruct files that were autosaved by the system. The script was written five years ago and wasn't working. I decided to fork and update it as a fun side project. It's published to my github, but for those unfamiliar with the files and databases that this runs with, I have included an overview of the script, it's functionality, and how to get it working for you.
+While taking a DFIR course on Mac specific forensics recently, I was introduced to the truffle-shuffle script. It's a short script that pulls from MacOS' document recovery databases to reconstruct files that were autosaved by the system. The script was written five years ago and wasn't working. I decided to fork and update it as a fun side project. It's published to my github, but for those unfamiliar with the files and databases that this runs with, I have included an overview of the script, its functionality, and how to get it working for you.
 
 ## Obtaining Necessary Files
 
 This script requires three inputs.
 
-1. Desired Output Directory
-2. ChunkStoreDatabase
-3. ChunkStorage
+1. Desired Output Directory  
+2. ChunkStoreDatabase  
+3. ChunkStorage  
 
-The files are located in the .DocumentRevisions-V100/.cs directory and require elevated privileges to access. You can either run the script as sudo or make copies of the CSChunk files and change their permissions before running the script.
+The files are located in the `.DocumentRevisions-V100/.cs` directory and require elevated privileges to access. You can either run the script as sudo or make copies of the CSChunk files and change their permissions before running the script.
 
-The script works by reconstructing recovery files stored by MacOS as part of their built in document recovery capabilities. It reads chunk lists from the CSStorageChunkListTable in ChunkStoreDatabase. It then uses the chunk IDs to look up the offsets and sizes of these chunks in the CSChunkTable, then pulls the actual chunk bytes from the binary ChunkStorage file. It stitches those chunks together in the correct order to rebuild the original file contents, while also saving each individual raw chunk as it's own file for reference.
+The script works by reconstructing recovery files stored by MacOS as part of their built in document recovery capabilities. It reads chunk lists from the `CSStorageChunkListTable` in `ChunkStoreDatabase`. It then uses the chunk IDs to look up the offsets and sizes of these chunks in the `CSChunkTable`, then pulls the actual chunk bytes from the binary `ChunkStorage` file. It stitches those chunks together in the correct order to rebuild the original file contents, while also saving each individual raw chunk as its own file for reference.
 
-To determine which application should be used to open the reconstructed file, run {% highlight c %} file <reconstructedfilename> {% endhighlight %} in your terminal to get the file type.
+To determine which application should be used to open the reconstructed file, run:
 
-### Script!!
+```bash
+file <reconstructedfilename>
+```
+in your terminal. 
 
-{% highlight c %}
+## TruffleShuffle v2
+
+```bash
 #!/usr/bin/env python3
 
 import os
@@ -92,10 +97,3 @@ with sqlite3.connect(options.csdb) as db:
         except sqlite3.Error as err:
             print(f"SQLite error - {str(err)}")
             sys.exit(1)
-
-
-
-{% endhighlight %}
-
-
-
