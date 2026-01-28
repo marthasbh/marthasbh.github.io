@@ -57,7 +57,7 @@ img { max-width: 100%; height: auto; margin-top: auto; margin-bottom: auto; }
 figure > img { display: block; }
 figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px; text-align: center; color: $gray; }
 
-/* ===== MASTHEAD + AVATAR ===== */
+/* ===== MASTHEAD ===== */
 .wrapper-masthead {
   margin-bottom: 20px;
   width: 100%;
@@ -76,27 +76,6 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
     align-items: center;
     text-align: center;
     padding: 15px 0;
-  }
-}
-
-.site-avatar {
-  width: 120px;   /* desktop avatar size */
-  height: 120px;
-  flex-shrink: 0;
-  margin-right: 20px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-  }
-
-  @include mobile {
-    width: 100px;
-    height: 100px;
-    margin: 0 0 10px 0;
   }
 }
 
@@ -205,6 +184,30 @@ footer {
 /* ===== SECTIONS & POSTS STYLING ===== */
 .date { font-weight: bold; color: $gray; margin-bottom: 35px; }
 .post-categories { font-weight: bold; color: $gray; margin-bottom: 40px; }
+
+/* ===== AVATAR FIX: responsive, keeps dark mode ===== */
+.site-avatar {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  margin-right: 15px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .site-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px auto;
+  }
+}
 
 /* ===== IMPORTS ===== */
 @import "message";
