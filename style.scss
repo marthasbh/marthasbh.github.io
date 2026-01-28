@@ -36,7 +36,7 @@ body {
   max-width: 740px;      /* keeps text readable */
   padding: 0 20px;       /* space from edges */
   width: 100%;
-  box-sizing: border-box; /* include padding in width */
+  box-sizing: border-box;
 }
 
 /* ===== HEADINGS & TEXT ===== */
@@ -65,12 +65,15 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
 
 .masthead {
   display: flex;
+  flex-wrap: wrap;          /* allow items to wrap */
   align-items: center;
+  justify-content: flex-start;
   padding: 20px 0;
   border-bottom: 1px solid $lightGray;
 
   @include mobile {
-    display: block;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     padding: 15px 0;
   }
@@ -78,10 +81,10 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
 
 /* ===== AVATAR FIX ===== */
 .site-avatar {
-  width: 100px;       /* balanced desktop size */
+  width: 100px;             /* desktop size */
   height: 100px;
   flex-shrink: 0;
-  margin-right: 15px;
+  margin-right: 20px;
 
   img {
     width: 100%;
@@ -94,16 +97,16 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
   @include mobile {
     width: 80px;
     height: 80px;
-    margin: 0 auto 10px auto;
+    margin: 0 0 10px 0;
   }
 }
 
 .site-info {
   flex: 1;
+  min-width: 0;              /* prevents text overflow */
   align-self: center;
 
   @include mobile {
-    display: block;
     margin: 0 auto;
     text-align: center;
   }
