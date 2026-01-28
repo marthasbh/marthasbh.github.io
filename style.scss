@@ -47,34 +47,31 @@ img { max-width: 100%; height: auto; margin-top: auto; margin-bottom: auto; }
 figure > img { display: block; }
 figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px; text-align: center; color: $gray; }
 
-/* ===== MASTHEAD & AVATAR: DYNAMIC SCALING ===== */
+/* ===== MASTHEAD & AVATAR ===== */
 .wrapper-masthead {
   margin-bottom: auto;
-  max-width: none; /* allow masthead to grow freely */
+  max-width: none;
 }
 
 .masthead {
   display: flex;
   align-items: center;
-  padding: 40px 0;
+  padding: 20px 0;
   border-bottom: 1px solid $lightGray;
-  max-width: none; /* override default container width */
 
   @include mobile {
     display: block;
     text-align: center;
-    padding: 25px 0;
+    padding: 15px 0;
   }
 }
 
-/* ========================= */
-/* AVATAR FIX: RESPONSIVE SIZE */
-/* ========================= */
+/* ===== AVATAR FIX ===== */
 .site-avatar {
-  width: 180px; /* default size */
-  height: 180px;
+  width: 100px;       /* desktop size */
+  height: 100px;
   flex-shrink: 0;
-  margin-right: 20px;
+  margin-right: 15px;
 
   img {
     width: 100%;
@@ -85,18 +82,17 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
   }
 
   @include mobile {
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 15px auto;
+    width: 80px;      /* mobile size */
+    height: 80px;
+    margin: 0 auto 10px auto;
   }
 }
 
 .site-info {
   flex: 1;
-  align-self: center; /* vertically center next to avatar */
+  align-self: center;
 
   @include mobile {
-    float: none;
     display: block;
     margin: 0 auto;
     text-align: center;
@@ -199,9 +195,7 @@ footer {
 .date { font-weight: bold; color: $gray; margin-bottom: 35px; }
 .post-categories { font-weight: bold; color: $gray; margin-bottom: 40px; }
 
-/* ======================== */
-/* KEEP EXISTING IMPORTS */
-/* ======================== */
+/* ===== IMPORTS ===== */
 @import "message";
 @import "share-buttons";
 @import "spotify-embed";
