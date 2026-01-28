@@ -1,6 +1,3 @@
----
----
-
 @import "variables";
 
 /* ===== BASE STYLES ===== */
@@ -47,7 +44,7 @@ img { max-width: 100%; height: auto; margin-top: auto; margin-bottom: auto; }
 figure > img { display: block; }
 figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px; text-align: center; color: $gray; }
 
-/* ===== MASTHEAD & AVATAR ===== */
+/* ===== MASTHEAD & AVATAR: DYNAMIC SCALING ===== */
 .wrapper-masthead { margin-bottom: auto; }
 
 .masthead {
@@ -64,22 +61,22 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
 }
 
 .site-avatar {
-  width: 220px;
-  height: 220px;
-  margin-right: 20px;
+  width: clamp(150px, 20vw, 300px);
+  height: clamp(150px, 20vw, 300px);
   flex-shrink: 0; /* prevent shrinking */
+  margin-right: 20px;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* fills container without distortion */
+    object-fit: cover;
     border-radius: 50%; /* perfect circle */
     display: block;
   }
 
   @include mobile {
-    width: 160px;
-    height: 160px;
+    width: clamp(120px, 35vw, 160px);
+    height: clamp(120px, 35vw, 160px);
     margin: 0 auto 15px auto;
     display: block;
   }
@@ -102,8 +99,8 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
   color: $darkGray;
   font-family: $sans-font-family;
   font-weight: 400;
-  font-size: 32px !important;
-  letter-spacing: 01px;
+  font-size: clamp(28px, 3vw, 36px) !important; /* scales with screen */
+  letter-spacing: 1px;
 
   a { &:hover { color: $mahogany !important; text-decoration: none; } &:visited { color: inherit; } }
 
@@ -113,7 +110,7 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
 .site-description {
   margin-top: 5px;
   color: $gray;
-  font-size: 18px !important;
+  font-size: clamp(16px, 2vw, 20px) !important; /* scales with screen */
   font-weight: 400;
 
   @include mobile { margin: 5px 0 15px 0; }
