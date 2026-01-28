@@ -29,6 +29,16 @@ body {
   overflow-wrap: break-word;
 }
 
+/* ===== CONTAINER ===== */
+.container {
+  flex: 1 0 auto;
+  margin: 0 auto;
+  max-width: 740px;      /* keeps text readable */
+  padding: 0 20px;       /* space from edges */
+  width: 100%;
+  box-sizing: border-box; /* include padding in width */
+}
+
 /* ===== HEADINGS & TEXT ===== */
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, %vertical-rhythm { margin-bottom: 15px; }
 h1 { font-size: 30px; a { color: inherit; } }
@@ -47,7 +57,7 @@ img { max-width: 100%; height: auto; margin-top: auto; margin-bottom: auto; }
 figure > img { display: block; }
 figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px; text-align: center; color: $gray; }
 
-/* ===== MASTHEAD & AVATAR ===== */
+/* ===== MASTHEAD ===== */
 .wrapper-masthead {
   margin-bottom: auto;
   max-width: none;
@@ -68,7 +78,7 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
 
 /* ===== AVATAR FIX ===== */
 .site-avatar {
-  width: 100px;       /* desktop size */
+  width: 100px;       /* balanced desktop size */
   height: 100px;
   flex-shrink: 0;
   margin-right: 15px;
@@ -82,7 +92,7 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
   }
 
   @include mobile {
-    width: 80px;      /* mobile size */
+    width: 80px;
     height: 80px;
     margin: 0 auto 10px auto;
   }
