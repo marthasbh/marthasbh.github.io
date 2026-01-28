@@ -32,10 +32,10 @@ body {
 /* ===== CONTAINER ===== */
 .container {
   flex: 1 0 auto;
-  margin: 0 auto;
-  max-width: 740px;      /* keeps text readable */
-  padding: 0 20px;       /* space from edges */
+  max-width: 740px;
   width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -65,7 +65,7 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
 
 .masthead {
   display: flex;
-  flex-wrap: wrap;          /* allow items to wrap */
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   padding: 20px 0;
@@ -79,9 +79,9 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
   }
 }
 
-/* ===== AVATAR FIX ===== */
+/* ===== AVATAR ===== */
 .site-avatar {
-  width: 100px;             /* desktop size */
+  width: 100px;
   height: 100px;
   flex-shrink: 0;
   margin-right: 20px;
@@ -103,8 +103,7 @@ figcaption { font-size: 14px !important; margin-top: -20px; margin-bottom: 10px;
 
 .site-info {
   flex: 1;
-  min-width: 0;              /* prevents text overflow */
-  align-self: center;
+  min-width: 0;
 
   @include mobile {
     margin: 0 auto;
@@ -158,8 +157,8 @@ nav {
 .nav-menu-item.active, a.nav-menu-item:focus { text-decoration: none; color: $mahogany; }
 
 /* ===== POSTS ===== */
-.posts > .post { padding-bottom: 02em; border-bottom: 01px solid $lightGray; }
-.posts > .post:last-child { padding-bottom: 01em; border-bottom: none; }
+.posts > .post { padding-bottom: 2em; border-bottom: 1px solid $lightGray; }
+.posts > .post:last-child { padding-bottom: 1em; border-bottom: none; }
 
 .post {
   .comments { margin-top: 10px; }
@@ -180,8 +179,8 @@ nav {
 /* ===== FOOTER ===== */
 .wrapper-footer {
   margin-top: 30px;
-  border-top: 01px solid #ddd;
-  border-bottom: 01px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   background-color: $lightGray;
 }
 
@@ -189,11 +188,11 @@ footer {
   padding: 20px 0;
   text-align: center;
 
-  .social-icons { margin-bottom: 08px; }
+  .social-icons { margin-bottom: 8px; }
 
   .social-icon {
     display: inline-block;
-    padding: 0 04px;
+    padding: 0 4px;
     color: $gray;
     &:hover { color: $darkGray; }
   }
