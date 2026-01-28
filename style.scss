@@ -4,7 +4,14 @@
 @import "variables";
 
 /* ===== BASE STYLES ===== */
-html { font-size: 100%; }
+html { 
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 body {
   background: $white;
@@ -25,6 +32,7 @@ body {
   min-height: 100vh;
   height: 100%;
   margin: 0;
+  padding: 0;
   flex-direction: column;
   overflow-wrap: break-word;
 }
