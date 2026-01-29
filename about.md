@@ -1,3 +1,5 @@
+<img src="/assets/image/maglass.png" alt="My Photo" style="float: left; margin-right: 20px; margin-bottom: 10px; width: 250px; border-radius: 10px;">
+
 ---
 layout: page
 title: About
