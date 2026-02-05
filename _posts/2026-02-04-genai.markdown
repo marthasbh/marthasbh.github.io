@@ -25,4 +25,4 @@ To be most effective, all enterprise AI tools should be required to route prompt
 
 This allows security to become an integrated part of the code development process and significantly reduces the organizational risk of implementing AI written code. While the initial creation and implementation of a centralized security MCP server may be work intensive and require significant effort, the payoff in the increased security of developed code and implemented processes cannot be overstated.
 
-I hope that going forward we see more and more companies taking this approach. The exploitation of AI generated code is just beginning, and anything we can do to reduce the vulnerability of our organizations to these attack is well worth the investment of time, and money.
+I hope that going forward we see more and more companies taking this approach. The exploitation of AI generated code is just beginning, and anything we can do to reduce the vulnerability of our organizations to these attack is well worth the investment of time and money.
