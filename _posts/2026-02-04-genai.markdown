@@ -2,7 +2,7 @@
 layout: post
 title:  "GenAI Code Security Is a Context Problem, Not a Tooling Problem: Notes from a Pacific Hackers Presentation"
 date:   2026-02-04 09:03:09 -0700
-categories: [content, reference, artifacts, macos]
+categories: [content, reference, ai, security]
 ---
 
 One of the perks of living in the Bay Area is that there is a vibrant, active community of security enthusiasts who frequently come together to share their knowledge and expertise. Pacific Hackers is one of the organizations who helps facilitate these workshops and talks. When I saw that Adobe was hosting a workshop for Pacific Hackers focused on security and AI, I knew I had to attend. 
