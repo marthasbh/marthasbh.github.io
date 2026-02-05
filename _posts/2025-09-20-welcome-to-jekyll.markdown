@@ -1,7 +1,28 @@
 ---
 layout: post
-title:  "Forensically Useful Plists"
-date:   2025-09-22 09:03:09 -0700
+title:  "GenAI Code Security Is a Context Problem, Not a Tooling Problem: Notes from a Pacific Hackers Presentation"
+date:   2026-02-04 09:03:09 -0700
 categories: [content, reference, artifacts, macos]
 ---
 
+One of the perks of living in the Bay Area is that there is a vibrant, active community of security enthusiasts who frequently come together to share their knowledge and expertise. Pacific Hackers is one of the organizations who helps facilitate these workshops and talks. When I saw that Adobe was hosting a workshop for Pacific Hackers focused on security and AI, I knew I had to attend. 
+
+Chandrani Mukherjee was the first presenter. She currently works as a product security engineer at Adobe, and she gave an excellent talk focused on coding with AI & best practices for utilizing AI within an organization to ensure that the answers and code it is providing are as secure as possible.
+
+I think that nearly everyone who writes or deals with coding in their daily work would agree that generative AI has rapidly become ubiquitous in modern software development. Unfortunately, the security risks that come with AI and AI generated code are often an afterthought. Mukherjee shared some findings from Veracode's GenAI Security Report that I found deeply concerning: ~45% of AI code contains vulnerabilities.
+
+However, Mukherjee argued that the root cause of these issues is frequently misunderstood. The problem is not that AI tools are fundamentally broken. Rather, AI-generated code failures are primarily failures of context. 
+
+It is key to remember that the AI models in use today are trained extensively on publicly available code, much of which is outdated, insecure, or simply inappropriate for modern production environments. As a result, AI-generated code often reproduces these vulnerable patterns. In many cases, the generated code is actually syntactically valid, yet unsafe for the specific system, service, or model in which it is intended to be deployed. This is where most AI-driven security vulnerabilities emerge.
+
+How can we resolve this issue within our environments so that we can leverage the powerful capabilities of AI, but minimize organizational risk? The answer is simple: Code with context.
+
+As advanced as they are, AI models cannot infer what constitutes secure code for the organization it is being used for. AI is not yet all knowing, even if some people believe otherwise. In order to ensure the code that AI is writing is secure and operationally valid, developers should explicitly supply security expectations, usage constraints, and operational realities.
+
+Unfortunately, in practice, this is easier said than done. Documentation regarding security and engineering practices is often scattered across organizational silos from internal wikis and SharePoint sites to GitHub repos. And let's be honest, most engineers don't care enough about security to take the time to look these security policies even when they aren't coding with AI. To address this issue, Mukherjee introduced the idea of organizations creating and utilizing an MCP Server that contains all of the security context for your organization. 
+
+To be most effective, all enterprise AI tools should be required to route prompts through a centralized security MCP server before generating responses to engineers. This allows AI systems to incorporate validated, company-specific security guidance, complete with citations and links to internal documentation, at generation time. Engineers can then use these citations to consult the exact documentation referenced by the MCP when deeper clarification is required.
+
+This allows security to become an integrated part of the code development process and significantly reduces the organizational risk of implementing AI written code. While the initial creation and implementation of a centralized security MCP server may be work intensive and require significant effort, the payoff in the increased security of developed code and implemented processes cannot be overstated.
+
+I hope that going forward we see more and more companies taking this approach. The exploitation of AI generated code is just beginning, and anything we can do to reduce the vulnerability of our organizations to these attack is well worth the investment of time, and money.
