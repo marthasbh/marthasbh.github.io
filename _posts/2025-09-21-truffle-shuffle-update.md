@@ -58,11 +58,8 @@ with sqlite3.connect(options.csdb) as db:
 
                 # Open output file            
                 with open(filename, 'wb') as output:
-                
                     for i in range(len(clt_chunkRowIDs)//8):
                         (chunk_id,) = struct.unpack("<Q",clt_chunkRowIDs[i*8:i*8+8])
-
-                        # Extracting chunks
                         for [offset, dataLen, cid] in db.execute("SELECT offset,dataLen,cid from CSChunkTable where ct_rowid = ?", (chunk_id,)):
                             filenameraw = f"{options.outdir}/{clt_inode}-{clt_rowid}-{chunk_id}-raw" 
                             print(filenameraw)
@@ -85,7 +82,6 @@ with sqlite3.connect(options.csdb) as db:
 
                             with open(filenameraw,'wb') as outputraw:
                                 outputraw.write(chunkDataRaw)
-
 
         except sqlite3.Error as err:
             print(f"SQLite error - {str(err)}")
