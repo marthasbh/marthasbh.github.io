@@ -20,7 +20,7 @@ To determine which application should be used to open the reconstructed file, ru
 
 ## TruffleShuffle v2
 
-```
+``` python
 #!/usr/bin/env python3
 
 import os
