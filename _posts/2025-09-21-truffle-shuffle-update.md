@@ -90,3 +90,4 @@ with sqlite3.connect(options.csdb) as db:
         except sqlite3.Error as err:
             print(f"SQLite error - {str(err)}")
             sys.exit(1)
+```
